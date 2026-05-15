@@ -1,0 +1,3 @@
+[submodule "tests/fixtures/upstream/strictdoc"]
+	path = tests/fixtures/upstream/strictdoc
+	url = https://github.com/strictdoc-project/strictdoc.git

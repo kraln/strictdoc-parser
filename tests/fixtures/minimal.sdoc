@@ -1,0 +1,22 @@
+[DOCUMENT]
+TITLE: Minimal Example
+UID: TEST-MIN
+VERSION: 0.1
+DATE: 2024-01-01
+CLASSIFICATION: Public
+PREFIX: TEST
+OPTIONS:
+  MARKUP: Text
+  AUTO_LEVELS: On
+  NODE_IN_TOC: True
+
+[GRAMMAR]
+IMPORT_FROM_FILE: grammar.sgra
+
+[REQUIREMENT]
+UID: TEST-001
+STATUS: Active
+TITLE: A simple requirement
+STATEMENT: >>>
+The system shall accept a minimal requirement.
+<<<

@@ -1,0 +1,21 @@
+[package]
+name = "strictdoc-parser"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "MPL-2.0"
+repository = "https://github.com/kraln/strictdoc-parser"
+description = "Parser for StrictDoc .sdoc files and StrictDoc @relation source annotations."
+keywords = ["strictdoc", "requirements", "parser", "sdoc"]
+categories = ["parser-implementations"]
+readme = "README.md"
+
+[features]
+default = []
+serde = ["dep:serde"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"], optional = true }
+
+[dev-dependencies]
+insta = "1"

@@ -1,0 +1,31 @@
+[DOCUMENT]
+TITLE: Nested Sections
+UID: TEST-NEST
+
+[[SECTION]]
+TITLE: Outer
+
+[REQUIREMENT]
+UID: TEST-OUT-1
+TITLE: In outer
+STATEMENT: At the outer level.
+
+[[SECTION]]
+TITLE: Inner
+
+[REQUIREMENT]
+UID: TEST-IN-1
+TITLE: In inner
+STATEMENT: At the inner level.
+
+[[SECTION]]
+TITLE: Innermost
+
+[REQUIREMENT]
+UID: TEST-DEEP-1
+TITLE: In innermost
+STATEMENT: Three levels deep.
+
+[[/SECTION]]
+[[/SECTION]]
+[[/SECTION]]

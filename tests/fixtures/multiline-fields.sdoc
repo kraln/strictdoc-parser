@@ -1,0 +1,17 @@
+[DOCUMENT]
+TITLE: Heredoc Examples
+UID: TEST-HERE
+
+[REQUIREMENT]
+UID: TEST-HERE-1
+STATEMENT: >>>
+First paragraph of the statement.
+
+Second paragraph, after a blank line.
+<<<
+RATIONALE: >>>
+A multi-line rationale
+that spans several lines
+and preserves    interior   whitespace.
+<<<
+COMMENT: One-line comment value.
