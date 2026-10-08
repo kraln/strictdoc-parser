@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.0] - Unreleased
+## [0.2.0] - 2026-10-08
 
 - **Breaking:** `.sdoc` elements of any tag (`[TEXT]`, custom-grammar elements such as `[FEATURE]`) and composite `[[TAG]]` … `[[/TAG]]` blocks are now parsed as `Node`s instead of being skipped; `[REQUIREMENT]`s nested in composites are no longer lost. `Requirement` is renamed `Node` (deprecated alias kept), and `DocumentChild::Requirement` is now `DocumentChild::Node`.
 - `requirements_flat()` now returns every normative node (all except `[TEXT]`); new `nodes_flat()` returns all nodes.
