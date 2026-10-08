@@ -50,7 +50,7 @@ fn every_node_carries_a_span() {
     assert_eq!(doc.span.start, 0);
     assert_eq!(doc.span.end, MULTILINE.len());
     let req = match &doc.body[0] {
-        strictdoc_parser::DocumentChild::Requirement(r) => r,
+        strictdoc_parser::DocumentChild::Node(r) => r,
         _ => panic!("expected req"),
     };
     assert!(req.span.start < req.span.end);

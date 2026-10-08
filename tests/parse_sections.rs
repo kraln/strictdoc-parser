@@ -9,9 +9,37 @@ use strictdoc_parser::{parse, DocumentChild, ParseErrorKind};
 fn unclosed_section_errors_out() {
     let input = "[DOCUMENT]\nTITLE: T\n\n[[SECTION]]\nTITLE: Outer\n\n[REQUIREMENT]\nUID: U-1\nSTATEMENT: x\n";
     let err = parse(input).unwrap_err();
-    assert_eq!(err.kind, ParseErrorKind::UnclosedSection);
+    assert_eq!(
+        err.kind,
+        ParseErrorKind::UnclosedBlock {
+            tag: "[[SECTION]]".to_string()
+        }
+    );
     // Error should point at the [[SECTION]] line.
     assert_eq!(err.line, 4);
+}
+
+// r[verify sect.open-close]
+#[test]
+fn mismatched_close_errors_out() {
+    let input = "[DOCUMENT]\nTITLE: T\n\n[[SECTION]]\nTITLE: S\n\n[[/COMPOSITE]]\n";
+    let err = parse(input).unwrap_err();
+    assert_eq!(
+        err.kind,
+        ParseErrorKind::MismatchedClose {
+            expected: "[[/SECTION]]".to_string(),
+            found: "[[/COMPOSITE]]".to_string(),
+        }
+    );
+    assert_eq!(err.line, 7);
+
+    let err = parse("[DOCUMENT]\nTITLE: T\n\n[[/SECTION]]\n").unwrap_err();
+    assert_eq!(
+        err.kind,
+        ParseErrorKind::UnmatchedClose {
+            tag: "[[/SECTION]]".to_string()
+        }
+    );
 }
 
 // r[verify sect.title]
@@ -67,7 +95,7 @@ STATEMENT: deep
         _ => panic!("L4"),
     };
     let req = match &s4.children[0] {
-        DocumentChild::Requirement(r) => r,
+        DocumentChild::Node(r) => r,
         _ => panic!("expected req"),
     };
     assert_eq!(req.field_text("UID"), Some("DEEP-1"));

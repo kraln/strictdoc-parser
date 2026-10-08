@@ -1,0 +1,24 @@
+# Intended differences from upstream StrictDoc, checked by
+# tests/upstream_differential.rs. Format: `category | key | reason`, where
+# key is a corpus path (.sdoc categories) or a marker input (`\n` = newline).
+#
+# Upstream semantic validation the crate deliberately doesn't do: it parses
+# syntax only and never touches the filesystem.
+crate-accepts | tests/integration/features/document_fragments/_validations/01_document_file_path_must_be_sdoc/input.sdoc | [DOCUMENT_FROM_FILE] target extension isn't validated
+crate-accepts | tests/integration/features/document_fragments/_validations/02_document_file_path_must_be_valid/input.sdoc | [DOCUMENT_FROM_FILE] target existence isn't checked
+crate-accepts | tests/integration/features/sdoc/document_grammar/_grammar_from_file/_validations/02_grammar_file_must_not_contain_dots/input.sdoc | IMPORT_FROM_FILE path isn't validated
+crate-accepts | tests/integration/features/sdoc/LEVEL/AUTO_LEVELS/03_section_level_is_not_provided_when_automatic_levels_is_off/input.sdoc | AUTO_LEVELS/LEVEL consistency isn't validated
+#
+# Leniency: input upstream no longer accepts, parsed rather than rejected.
+crate-accepts | tests/integration/features/deprecations/composite_node_migration/00_migration_warning_shown_when_no_project_config_option/input.sdoc | legacy [SECTION] ... [/SECTION] is accepted as a section
+crate-accepts | tests/integration/features/deprecations/composite_node_migration/01_migration_path_with_project_config_option/input.sdoc | legacy [SECTION] ... [/SECTION] is accepted as a section
+crate-accepts | tests/integration/features/reqif/profiles/p01_sdoc/end_to_end/90_legacy_section_not_supported_anymore/sample.sdoc | legacy [SECTION] ... [/SECTION] is accepted as a section
+crate-accepts | tests/integration/features/excel/export/03_custom_fields_to_export/input.sdoc | unknown [DOCUMENT] header blocks (here SPECIAL_FIELDS:) are skipped
+#
+# Upstream's generic comment preprocessor only strips `//`, `///`, `#`, `*`
+# and `/**`; its language readers handle other comment syntaxes before the
+# marker parser sees them. The crate is handed raw comment text, so it
+# accepts these leaders directly.
+marker | //! @relation(REQ-1, scope=function) | `//!` is accepted as a comment leader
+marker | -- @relation(REQ-1, scope=function) | `--` is accepted as a comment leader
+marker | <!-- @relation(REQ-1, scope=function) --> | `<!--` is accepted as a comment leader

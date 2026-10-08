@@ -8,7 +8,7 @@ use std::fmt;
 
 /// A fatal parse error.
 ///
-/// v0.1 does not perform recovery: parsing aborts on the first error.
+/// The parser does not perform recovery: parsing aborts on the first error.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ParseError {
     pub kind: ParseErrorKind,
@@ -21,25 +21,23 @@ pub struct ParseError {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+#[non_exhaustive]
 pub enum ParseErrorKind {
-    /// A heredoc was opened with `>>>` but never closed with `<<<`.
+    /// A heredoc was opened with `>>>` but never closed with `<<<` at the
+    /// start of a line.
     UnterminatedHeredoc,
-    /// Encountered `[[/SECTION]]` without a matching open.
-    UnmatchedSectionClose,
-    /// EOF reached with a section still open.
-    UnclosedSection,
-    /// A `[REQUIREMENT]` was missing a required field (e.g. UID).
-    MissingRequirementField { name: String },
-    /// A `[[SECTION]]` was missing its `TITLE:` field.
+    /// Encountered a closing tag (`[[/TAG]]` or `[/TAG]`) with no open block.
+    UnmatchedClose { tag: String },
+    /// A closing tag did not match the innermost open block.
+    MismatchedClose { expected: String, found: String },
+    /// EOF reached with a block (`[[SECTION]]`, `[[TAG]]`, …) still open.
+    UnclosedBlock { tag: String },
+    /// A section was missing its `TITLE:` field.
     MissingSectionTitle,
-    /// Found an unrecognised block tag (e.g. `[BOGUS]`).
-    UnknownBlock { tag: String },
-    /// A `KEY: value` line had no `:` separator where one was expected.
-    MalformedField,
-    /// A `[[TAG]]` line had no matching `]]` close brace.
-    MalformedBlockHeader,
-    /// Encountered content that wasn't part of any block (stray text at the
-    /// top level before `[DOCUMENT]` or between sections).
+    /// A `RELATIONS:` entry did not start with `- TYPE: …`.
+    MalformedRelation,
+    /// Encountered content that is not part of any block, or a line inside
+    /// a block that is neither a field nor part of a heredoc.
     UnexpectedContent,
     /// The document started with something other than `[DOCUMENT]`.
     MissingDocumentBlock,
@@ -69,26 +67,22 @@ impl fmt::Display for ParseError {
             ParseErrorKind::UnterminatedHeredoc => {
                 f.write_str("unterminated heredoc (`<<<` not found)")
             }
-            ParseErrorKind::UnmatchedSectionClose => {
-                f.write_str("`[[/SECTION]]` without a matching open")
+            ParseErrorKind::UnmatchedClose { tag } => {
+                write!(f, "`{tag}` without a matching open")
             }
-            ParseErrorKind::UnclosedSection => f.write_str("section was opened but never closed"),
-            ParseErrorKind::MissingRequirementField { name } => {
-                write!(f, "requirement is missing required field `{name}`")
+            ParseErrorKind::MismatchedClose { expected, found } => {
+                write!(f, "expected `{expected}`, found `{found}`")
+            }
+            ParseErrorKind::UnclosedBlock { tag } => {
+                write!(f, "`{tag}` was opened but never closed")
             }
             ParseErrorKind::MissingSectionTitle => {
                 f.write_str("section is missing its `TITLE:` field")
             }
-            ParseErrorKind::UnknownBlock { tag } => write!(f, "unknown block tag `{tag}`"),
-            ParseErrorKind::MalformedField => {
-                f.write_str("malformed field (expected `KEY: value`)")
+            ParseErrorKind::MalformedRelation => {
+                f.write_str("malformed relation (expected `- TYPE: ...`)")
             }
-            ParseErrorKind::MalformedBlockHeader => {
-                f.write_str("malformed block header (missing closing brackets)")
-            }
-            ParseErrorKind::UnexpectedContent => {
-                f.write_str("unexpected content outside any block")
-            }
+            ParseErrorKind::UnexpectedContent => f.write_str("unexpected content"),
             ParseErrorKind::MissingDocumentBlock => {
                 f.write_str("expected `[DOCUMENT]` block at the top of the file")
             }

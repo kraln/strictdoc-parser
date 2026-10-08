@@ -1,0 +1,347 @@
+{"input": "@relation(SDOC-SRS-9, scope=file)", "markers": [{"uids": ["SDOC-SRS-9"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-10, scope=file)", "markers": [{"uids": ["SDOC-SRS-10"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-11, scope=file)", "markers": [{"uids": ["SDOC-SRS-11"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-46, scope=file)", "markers": [{"uids": ["SDOC-SRS-46"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-9, SDOC-SRS-10, scope=file)", "markers": [{"uids": ["SDOC-SRS-9", "SDOC-SRS-10"], "scope": "file", "role": null}]}
+{"input": "@relation [\\#1967](https://github.com/strictdoc-project/strictdoc/pull/1967) ([stanislaw](https://github.com/stanislaw))", "markers": []}
+{"input": "@relation syntax [\\#1966](https://github.com/strictdoc-project/strictdoc/pull/1966) ([stanislaw](https://github.com/stanislaw))", "markers": []}
+{"input": "@relation markers&lt;/font&gt;\" style=\"text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0;fontSize=16;\" parent=\"WmgCZEu-x7mEWPRQ3RF8-93\" vertex=\"1\">", "markers": []}
+{"input": "@relation\",", "markers": []}
+{"input": "@relation\", \"FIXME\", \"http\"]", "markers": []}
+{"input": "@relation`` marker must be added to the source file. Several marker types are supported, depending on the programming language. For example, the ``scope=class`` option is available for Python files but not for C files, as C does not support classes. The marker supports both () and {} for arguments.", "markers": []}
+{"input": "@relation`` is the new correct marker name.", "markers": []}
+{"input": "@relation markers and be compatible with Doxygen. See :ref:`Doxygen <SECTION-UG-Doxygen>`.", "markers": []}
+{"input": "@relation(REQ-1, scope=file)", "markers": [{"uids": ["REQ-1"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-1, scope=class)", "markers": [{"uids": ["REQ-1"], "scope": "class", "role": null}]}
+{"input": "@relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation`` marker is included in a function declaration prototype (which is the most common practice), StrictDoc also creates a link between the requirement and the corresponding C function definition.", "markers": []}
+{"input": "@relation(REQ-1, scope=range_start)", "markers": [{"uids": ["REQ-1"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-1, scope=range_end)", "markers": [{"uids": ["REQ-1"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-1, scope=line)", "markers": [{"uids": ["REQ-1"], "scope": "line", "role": null}]}
+{"input": "@relation keyword work with Doxygen, an alias has to be created:", "markers": []}
+{"input": "@relation{REQ-1, scope=function}``.", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1, scope=function)``. The ability to add markers to classes has not yet been implemented.", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation`` marker is specified in a C function declaration, StrictDoc will perform its \"magic\" and automatically connect the referenced requirement to the corresponding C function definition. This allows a ``@relation`` marker to be placed in the main documentation block, typically located above C function declarations, while ensuring the requirement is also linked to the function definition.", "markers": []}
+{"input": "@relation`` marker to be placed in the main documentation block, typically located above C function declarations, while ensuring the requirement is also linked to the function definition.", "markers": []}
+{"input": "@relation markers. LINK to documents.", "markers": []}
+{"input": "@relation(SDOC-SRS-8, scope=file)", "markers": [{"uids": ["SDOC-SRS-8"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-89, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-89"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-73, scope=line)", "markers": [{"uids": ["SDOC-SRS-73"], "scope": "line", "role": null}]}
+{"input": "@relation(SDOC-SRS-89, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-89"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-152, scope=file)", "markers": [{"uids": ["SDOC-SRS-152"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-134, scope=file)", "markers": [{"uids": ["SDOC-SRS-134"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-72, SDOC-SRS-153, scope=file)", "markers": [{"uids": ["SDOC-SRS-72", "SDOC-SRS-153"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-72, scope=file)", "markers": [{"uids": ["SDOC-SRS-72"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-30, scope=file)", "markers": [{"uids": ["SDOC-SRS-30"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-19, SDOC-SRS-127, SDOC-SRS-20, SDOC-SRS-23, SDOC-SRS-145, scope=file)", "markers": [{"uids": ["SDOC-SRS-19", "SDOC-SRS-127", "SDOC-SRS-20", "SDOC-SRS-23", "SDOC-SRS-145"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-22, scope=line)", "markers": [{"uids": ["SDOC-SRS-22"], "scope": "line", "role": null}]}
+{"input": "@relation(SDOC-SRS-150, scope=file)", "markers": [{"uids": ["SDOC-SRS-150"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-18, scope=file)", "markers": [{"uids": ["SDOC-SRS-18"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-98, SDOC-SRS-109, scope=file)", "markers": [{"uids": ["SDOC-SRS-98", "SDOC-SRS-109"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-155, scope=function)", "markers": [{"uids": ["SDOC-SRS-155"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-110, SDOC-SRS-151, scope=file)", "markers": [{"uids": ["SDOC-SRS-110", "SDOC-SRS-151"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-109, scope=file)", "markers": [{"uids": ["SDOC-SRS-109"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-19, scope=file)", "markers": [{"uids": ["SDOC-SRS-19"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-93, scope=function)", "markers": [{"uids": ["SDOC-SRS-93"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-132, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-132"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-132, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-132"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-21, scope=file)", "markers": [{"uids": ["SDOC-SRS-21"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-149, scope=file)", "markers": [{"uids": ["SDOC-SRS-149"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-26, scope=file)", "markers": [{"uids": ["SDOC-SRS-26"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-135, SDOC-SRS-100, scope=class)", "markers": [{"uids": ["SDOC-SRS-135", "SDOC-SRS-100"], "scope": "class", "role": null}]}
+{"input": "@relation(SDOC-SRS-99, scope=class)", "markers": [{"uids": ["SDOC-SRS-99"], "scope": "class", "role": null}]}
+{"input": "@relation(SDOC-SRS-31, SDOC-SRS-101, scope=file)", "markers": [{"uids": ["SDOC-SRS-31", "SDOC-SRS-101"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-145, scope=function)", "markers": [{"uids": ["SDOC-SRS-145"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-95, scope=file)", "markers": [{"uids": ["SDOC-SRS-95"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-105, scope=file)", "markers": [{"uids": ["SDOC-SRS-105"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-155, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-155"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-155, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-155"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-33, SDOC-SRS-142, scope=file)", "markers": [{"uids": ["SDOC-SRS-33", "SDOC-SRS-142"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-34, SDOC-SRS-141, scope=file)", "markers": [{"uids": ["SDOC-SRS-34", "SDOC-SRS-141"], "scope": "file", "role": null}]}
+{"input": "@relation[\\(\\{]\"", "markers": []}
+{"input": "@relation(SDOC-SRS-33, scope=file)", "markers": [{"uids": ["SDOC-SRS-33"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-144, scope=file)", "markers": [{"uids": ["SDOC-SRS-144"], "scope": "file", "role": null}]}
+{"input": "@relation\" is within the", "markers": []}
+{"input": "@relation\" does not work.", "markers": []}
+{"input": "@relation/", "markers": []}
+{"input": "@relation(SDOC-SRS-142, scope=file)", "markers": [{"uids": ["SDOC-SRS-142"], "scope": "file", "role": null}]}
+{"input": "@relation marker contains duplicate node UIDs: ['{relation_uid}'].\"", "markers": []}
+{"input": "@relation marker for requirements {reqs} misses scope argument.\",", "markers": []}
+{"input": "@relation({reqs}, scope=function)\"", "error": true}
+{"input": "@relation(SDOC-SRS-137, SDOC-SRS-139, SDOC-SRS-140, scope=file)", "markers": [{"uids": ["SDOC-SRS-137", "SDOC-SRS-139", "SDOC-SRS-140"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-124, scope=file)", "markers": [{"uids": ["SDOC-SRS-124"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-138, scope=file)", "markers": [{"uids": ["SDOC-SRS-138"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-34, scope=file)", "markers": [{"uids": ["SDOC-SRS-34"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-141, scope=file)", "markers": [{"uids": ["SDOC-SRS-141"], "scope": "file", "role": null}]}
+{"input": "@relation marker contains duplicate node UIDs: \"", "markers": []}
+{"input": "@relation(skip, scope=range_start)  # noqa: ERA001", "markers": [{"uids": ["skip"], "scope": "range_start", "role": null}]}
+{"input": "@relation(skip, scope=range_end)  # noqa: ERA001", "markers": [{"uids": ["skip"], "scope": "range_end", "role": null}]}
+{"input": "@relation keywords are also unmatched on lines: {range_lines}.\"", "markers": []}
+{"input": "@relation keyword found in source file.\",", "markers": []}
+{"input": "@relation(skip, scope=range_start)", "markers": [{"uids": ["skip"], "scope": "range_start", "role": null}]}
+{"input": "@relation keyword must be matched with a closing keyword. \"", "markers": []}
+{"input": "@relation(REQ-001, scope=range_start)\\n\"", "markers": [{"uids": ["REQ-001"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-001, scope=range_end)\"", "markers": [{"uids": ["REQ-001"], "scope": "range_end", "role": null}]}
+{"input": "@relation(skip, scope=range_end)", "markers": [{"uids": ["skip"], "scope": "range_end", "role": null}]}
+{"input": "@relation(skip...)\" block, so we ignore it.", "markers": [{"uids": ["skip..."], "scope": null, "role": null}]}
+{"input": "@relation(SDOC-SRS-142, SDOC-SRS-146, scope=file)", "markers": [{"uids": ["SDOC-SRS-142", "SDOC-SRS-146"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-142, SDOC-SRS-147, scope=file)", "markers": [{"uids": ["SDOC-SRS-142", "SDOC-SRS-147"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-142, SDOC-SRS-148, scope=file)", "markers": [{"uids": ["SDOC-SRS-142", "SDOC-SRS-148"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-LLR-177, SDOC-LLR-171, SDOC-LLR-173, scope=line)", "markers": [{"uids": ["SDOC-LLR-177", "SDOC-LLR-171", "SDOC-LLR-173"], "scope": "line", "role": null}]}
+{"input": "@relation(SDOC-LLR-175, scope=function)", "markers": [{"uids": ["SDOC-LLR-175"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-LLR-164, SDOC-LLR-172, scope=function)", "markers": [{"uids": ["SDOC-LLR-164", "SDOC-LLR-172"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-LLR-171, scope=function)", "markers": [{"uids": ["SDOC-LLR-171"], "scope": "function", "role": null}]}
+{"input": "@relation. Only scope=file|line|range_start is supported in regular \"", "markers": []}
+{"input": "@relation(SDOC-LLR-173, scope=function)", "markers": [{"uids": ["SDOC-LLR-173"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-LLR-174, scope=function)", "markers": [{"uids": ["SDOC-LLR-174"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-143, scope=file)", "markers": [{"uids": ["SDOC-SRS-143"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-163, scope=file)", "markers": [{"uids": ["SDOC-SRS-163"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-85, scope=function)", "markers": [{"uids": ["SDOC-SRS-85"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-51, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-51"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-51, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-51"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-48, scope=file)", "markers": [{"uids": ["SDOC-SRS-48"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-2, scope=file)", "markers": [{"uids": ["SDOC-SRS-2"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-104, SDOC-SRS-115, scope=file)", "markers": [{"uids": ["SDOC-SRS-104", "SDOC-SRS-115"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-104, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-104"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-104, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-104"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-48, scope=function)", "markers": [{"uids": ["SDOC-SRS-48"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-28, SDOC-SRS-33, SDOC-LLR-207, scope=file)", "markers": [{"uids": ["SDOC-SRS-28", "SDOC-SRS-33", "SDOC-LLR-207"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ, scope=function), connections shall become", "markers": [{"uids": ["REQ"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-28, scope=file)", "markers": [{"uids": ["SDOC-SRS-28"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-39, scope=file)", "markers": [{"uids": ["SDOC-SRS-39"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-119, scope=class)", "markers": [{"uids": ["SDOC-SRS-119"], "scope": "class", "role": null}]}
+{"input": "@relation(SDOC-SRS-155, scope=file)", "markers": [{"uids": ["SDOC-SRS-155"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-97, scope=file)", "markers": [{"uids": ["SDOC-SRS-97"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-51, scope=function)", "markers": [{"uids": ["SDOC-SRS-51"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-28, SDOC-SRS-2, scope=file)", "markers": [{"uids": ["SDOC-SRS-28", "SDOC-SRS-2"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-32, SDOC-SRS-102, scope=function)", "markers": [{"uids": ["SDOC-SRS-32", "SDOC-SRS-102"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-29, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-29"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-29, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-29"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-30, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-30"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-30, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-30"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-109, scope=range_start)", "markers": [{"uids": ["SDOC-SRS-109"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-SRS-109, scope=range_end)", "markers": [{"uids": ["SDOC-SRS-109"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-57, scope=file)", "markers": [{"uids": ["SDOC-SRS-57"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-56, scope=file)", "markers": [{"uids": ["SDOC-SRS-56"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-55, scope=file)", "markers": [{"uids": ["SDOC-SRS-55"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-111, scope=file)", "markers": [{"uids": ["SDOC-SRS-111"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-53, scope=file)", "markers": [{"uids": ["SDOC-SRS-53"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-35, scope=file)", "markers": [{"uids": ["SDOC-SRS-35"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-36, scope=file)", "markers": [{"uids": ["SDOC-SRS-36"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-156, scope=file)", "markers": [{"uids": ["SDOC-SRS-156"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-112, scope=file)", "markers": [{"uids": ["SDOC-SRS-112"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-54, scope=file)", "markers": [{"uids": ["SDOC-SRS-54"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-66, scope=file)", "markers": [{"uids": ["SDOC-SRS-66"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-51, scope=file)", "markers": [{"uids": ["SDOC-SRS-51"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-62, scope=file)", "markers": [{"uids": ["SDOC-SRS-62"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-65, scope=file)", "markers": [{"uids": ["SDOC-SRS-65"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-97, scope=function)", "markers": [{"uids": ["SDOC-SRS-97"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-154, scope=function)", "markers": [{"uids": ["SDOC-SRS-154"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-156, scope=function)", "markers": [{"uids": ["SDOC-SRS-156"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-24, scope=file)", "markers": [{"uids": ["SDOC-SRS-24"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-3, scope=file)", "markers": [{"uids": ["SDOC-SRS-3"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-157, scope=file)", "markers": [{"uids": ["SDOC-SRS-157"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-1, scope=file)", "markers": [{"uids": ["SDOC-SRS-1"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-126, scope=file)", "markers": [{"uids": ["SDOC-SRS-126"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-55, scope=function)", "markers": [{"uids": ["SDOC-SRS-55"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-92, scope=function)", "markers": [{"uids": ["SDOC-SRS-92"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-107, scope=function)", "markers": [{"uids": ["SDOC-SRS-107"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-57, scope=function)", "markers": [{"uids": ["SDOC-SRS-57"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-56, scope=function)", "markers": [{"uids": ["SDOC-SRS-56"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-120, scope=function)", "markers": [{"uids": ["SDOC-SRS-120"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-4, scope=function)", "markers": [{"uids": ["SDOC-SRS-4"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-46, scope=function)", "markers": [{"uids": ["SDOC-SRS-46"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-44, scope=function)", "markers": [{"uids": ["SDOC-SRS-44"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-45, scope=function)", "markers": [{"uids": ["SDOC-SRS-45"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-42, scope=function)", "markers": [{"uids": ["SDOC-SRS-42"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-41, SDOC-SRS-43, scope=function)", "markers": [{"uids": ["SDOC-SRS-41", "SDOC-SRS-43"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-4, scope=file)", "markers": [{"uids": ["SDOC-SRS-4"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-119, scope=file)", "markers": [{"uids": ["SDOC-SRS-119"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-159, scope=file)", "markers": [{"uids": ["SDOC-SRS-159"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-120, SDOC-SRS-159, scope=file)", "markers": [{"uids": ["SDOC-SRS-120", "SDOC-SRS-159"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-158, SDOC-SRS-30, scope=file)", "markers": [{"uids": ["SDOC-SRS-158", "SDOC-SRS-30"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-158, scope=file)", "markers": [{"uids": ["SDOC-SRS-158"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-161, scope=file)", "markers": [{"uids": ["SDOC-SRS-161"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-106, SDOC-SRS-120, scope=file)", "markers": [{"uids": ["SDOC-SRS-106", "SDOC-SRS-120"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-106, scope=file)", "markers": [{"uids": ["SDOC-SRS-106"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-162, scope=file)", "markers": [{"uids": ["SDOC-SRS-162"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-92, scope=file)", "markers": [{"uids": ["SDOC-SRS-92"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-55, SDOC-SRS-120, scope=file)", "markers": [{"uids": ["SDOC-SRS-55", "SDOC-SRS-120"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-160, scope=file)", "markers": [{"uids": ["SDOC-SRS-160"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-107, scope=file)", "markers": [{"uids": ["SDOC-SRS-107"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-50, SDOC-SRS-53, scope=file)", "markers": [{"uids": ["SDOC-SRS-50", "SDOC-SRS-53"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-001, scope=function)", "markers": [{"uids": ["REQ-001"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-85, scope=file)", "markers": [{"uids": ["SDOC-SRS-85"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-74, scope=file)", "markers": [{"uids": ["SDOC-SRS-74"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-115, scope=file)", "markers": [{"uids": ["SDOC-SRS-115"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-49, scope=file)", "markers": [{"uids": ["SDOC-SRS-49"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-GRANDCHILD, scope=function)", "markers": [{"uids": ["REQ-GRANDCHILD"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-5, scope=file)", "markers": [{"uids": ["SDOC-SRS-5"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-27, scope=file)", "markers": [{"uids": ["SDOC-SRS-27"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-154, scope=file)", "markers": [{"uids": ["SDOC-SRS-154"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-70, scope=file)", "markers": [{"uids": ["SDOC-SRS-70"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-29, scope=file)", "markers": [{"uids": ["SDOC-SRS-29"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-147, SDOC-SRS-137, scope=file)", "markers": [{"uids": ["SDOC-SRS-147", "SDOC-SRS-137"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-001, scope=function, role=Implementation)", "markers": [{"uids": ["REQ-001"], "scope": "function", "role": "Implementation"}]}
+{"input": "@relation(REQ-001, scope=line, role=Implementation)", "markers": [{"uids": ["REQ-001"], "scope": "line", "role": "Implementation"}]}
+{"input": "@relation(REQ-001, scope=range_start, role=Implementation)", "markers": [{"uids": ["REQ-001"], "scope": "range_start", "role": "Implementation"}]}
+{"input": "@relation(REQ-001, scope=range_end)", "markers": [{"uids": ["REQ-001"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-001, scope=class, role=Implementation)\"\"\"", "markers": [{"uids": ["REQ-001"], "scope": "class", "role": "Implementation"}]}
+{"input": "@relation(REQ-001, scope=function, role=Implementation)\"\"\"", "markers": [{"uids": ["REQ-001"], "scope": "function", "role": "Implementation"}]}
+{"input": "@relation(REQ-002, REQ-003, scope=range_start)", "markers": [{"uids": ["REQ-002", "REQ-003"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-002, REQ-003, scope=range_end)", "markers": [{"uids": ["REQ-002", "REQ-003"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-002, REQ-003, scope=range_start) -->", "markers": [{"uids": ["REQ-002", "REQ-003"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-002, REQ-003, scope=range_end) -->", "markers": [{"uids": ["REQ-002", "REQ-003"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-001, scope=range_start)", "markers": [{"uids": ["REQ-001"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SF_REQ-001, scope=file)", "markers": [{"uids": ["SF_REQ-001"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-002, scope=range_start)", "markers": [{"uids": ["REQ-002"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-002, scope=range_end)", "markers": [{"uids": ["REQ-002"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-001, scope=range_start) *)", "markers": [{"uids": ["REQ-001"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-001, scope=range_end) *)", "markers": [{"uids": ["REQ-001"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-001, scope=file)", "markers": [{"uids": ["REQ-001"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-139, scope=file)", "markers": [{"uids": ["SDOC-SRS-139"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-01, scope=range_start)", "markers": [{"uids": ["REQ-01"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-01, scope=range_end)", "markers": [{"uids": ["REQ-01"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SECT-1, scope=file)", "markers": [{"uids": ["SECT-1"], "scope": "file", "role": null}]}
+{"input": "@relation(SECT-1, scope=function)", "markers": [{"uids": ["SECT-1"], "scope": "function", "role": null}]}
+{"input": "@relation(SECT-1, scope=range_start)", "markers": [{"uids": ["SECT-1"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SECT-1, scope=range_end)", "markers": [{"uids": ["SECT-1"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-001, scope=line)", "markers": [{"uids": ["REQ-001"], "scope": "line", "role": null}]}
+{"input": "@relation(SDOC-SRS-145, scope=file)", "markers": [{"uids": ["SDOC-SRS-145"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-33, SDOC-SRS-145, scope=file)", "markers": [{"uids": ["SDOC-SRS-33", "SDOC-SRS-145"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-146, SDOC-SRS-138, scope=file)", "markers": [{"uids": ["SDOC-SRS-146", "SDOC-SRS-138"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-2, scope=function)", "markers": [{"uids": ["REQ-2"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1, REQ-2, scope=function)", "markers": [{"uids": ["REQ-1", "REQ-2"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-146, SDOC-SRS-137, scope=file)", "markers": [{"uids": ["SDOC-SRS-146", "SDOC-SRS-137"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-146, SDOC-SRS-145, scope=file)", "markers": [{"uids": ["SDOC-SRS-146", "SDOC-SRS-145"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-2, scope=file)", "markers": [{"uids": ["REQ-2"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-146, SDOC-SRS-139, scope=file)", "markers": [{"uids": ["SDOC-SRS-146", "SDOC-SRS-139"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-LLR-207, scope=file)", "markers": [{"uids": ["SDOC-LLR-207"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-2, scope=function, role=Implementation)", "markers": [{"uids": ["REQ-2"], "scope": "function", "role": "Implementation"}]}
+{"input": "@relation(REQ-1, scope=function, role=Test)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Test"}]}
+{"input": "@relation(REQ-3, scope=range_start)", "markers": [{"uids": ["REQ-3"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-3, scope=range_end)", "markers": [{"uids": ["REQ-3"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-3, scope=function)", "markers": [{"uids": ["REQ-3"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-4, scope=range_start)", "markers": [{"uids": ["REQ-4"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-4, scope=range_end)", "markers": [{"uids": ["REQ-4"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-SRS-146, SDOC-SRS-137, SDOC-SRS-145, scope=file)", "markers": [{"uids": ["SDOC-SRS-146", "SDOC-SRS-137", "SDOC-SRS-145"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-146, scope=file)", "markers": [{"uids": ["SDOC-SRS-146"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-147, SDOC-SRS-138, scope=file)", "markers": [{"uids": ["SDOC-SRS-147", "SDOC-SRS-138"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-147, SDOC-SRS-145, scope=file)", "markers": [{"uids": ["SDOC-SRS-147", "SDOC-SRS-145"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-147, SDOC-SRS-140, scope=file)", "markers": [{"uids": ["SDOC-SRS-147", "SDOC-SRS-140"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-SRS-147, SDOC-SRS-139, scope=file)", "markers": [{"uids": ["SDOC-SRS-147", "SDOC-SRS-139"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-4, scope=function)", "markers": [{"uids": ["REQ-4"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-5, scope=function)", "markers": [{"uids": ["REQ-5"], "scope": "function", "role": null}]}
+{"input": "@relation(", "error": true}
+{"input": "@relation(SDOC-SRS-148, scope=file)", "markers": [{"uids": ["SDOC-SRS-148"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-INNER-BLOCK-DOC)", "markers": [{"uids": ["REQ-INNER-BLOCK-DOC"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-INNER-DOC-ATTR)\"]", "markers": [{"uids": ["REQ-INNER-DOC-ATTR"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-INNER-LINE-DOC)", "markers": [{"uids": ["REQ-INNER-LINE-DOC"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-OUTER-BLOCK-DOC)", "markers": [{"uids": ["REQ-OUTER-BLOCK-DOC"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-OUTER-LINE-DOC)", "markers": [{"uids": ["REQ-OUTER-LINE-DOC"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-OUTER-DOC-ATTR)\"]", "markers": [{"uids": ["REQ-OUTER-DOC-ATTR"], "scope": null, "role": null}]}
+{"input": "@relation(SDOC-LLR-166 , scope=line)", "error": true}
+{"input": "@relation(SDOC-LLR-166 , scope=end)", "error": true}
+{"input": "@relation(SDOC-LLR-167 , scope=range_start)", "error": true}
+{"input": "@relation(SDOC-LLR-167 , scope=range_end)", "error": true}
+{"input": "@relation(SDOC-LLR-165, scope=range_start)", "markers": [{"uids": ["SDOC-LLR-165"], "scope": "range_start", "role": null}]}
+{"input": "@relation(SDOC-LLR-165, scope=range_end)", "markers": [{"uids": ["SDOC-LLR-165"], "scope": "range_end", "role": null}]}
+{"input": "@relation(SDOC-LLR-169 , scope=range_start)", "error": true}
+{"input": "@relation(SDOC-LLR-169 , scope=range_end)", "error": true}
+{"input": "@relation(SDOC-LLR-170 , scope=range_start)", "error": true}
+{"input": "@relation(SDOC-LLR-170 , scope=range_end)", "error": true}
+{"input": "@relation(SDOC-LLR-168 , scope=range_start)", "error": true}
+{"input": "@relation(SDOC-LLR-168 , scope=range_end)", "error": true}
+{"input": "@relation(SDOC-LLR-173, scope=file)", "markers": [{"uids": ["SDOC-LLR-173"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-LINE-RANGE, scope=line)", "markers": [{"uids": ["REQ-LINE-RANGE"], "scope": "line", "role": null}]}
+{"input": "@relation(REQ-LINE-RANGE, scope=range_start)", "markers": [{"uids": ["REQ-LINE-RANGE"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-LINE-RANGE, scope=range_end)", "markers": [{"uids": ["REQ-LINE-RANGE"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-LINE-RANGE, scope=file)", "markers": [{"uids": ["REQ-LINE-RANGE"], "scope": "file", "role": null}]}
+{"input": "@relation(SDOC-LLR-171, scope=file)", "markers": [{"uids": ["SDOC-LLR-171"], "scope": "file", "role": null}]}
+{"input": "@relation(LN-SyRS-10, scope=function, role=Verifies)", "markers": [{"uids": ["LN-SyRS-10"], "scope": "function", "role": "Verifies"}]}
+{"input": "@relation(REQ-001, REQ-001, scope=file)", "error": true}
+{"input": "@relation(SDOC-SRS-33, SDOC-SRS-139, scope=file)", "markers": [{"uids": ["SDOC-SRS-33", "SDOC-SRS-139"], "scope": "file", "role": null}]}
+{"input": "@relation marker contains duplicate node UIDs: ['REQ-001']. Location: {{.*}}file.py:2.", "markers": []}
+{"input": "@relation marker contains duplicate node UIDs: ['REQ-001'].", "markers": []}
+{"input": "@relation(LREQ-1, scope=range_start)", "markers": [{"uids": ["LREQ-1"], "scope": "range_start", "role": null}]}
+{"input": "@relation(LREQ-1, scope=range_end)", "markers": [{"uids": ["LREQ-1"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-A, scope=function)</doc>", "markers": [{"uids": ["REQ-A"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-B, scope=function)</doc>", "markers": [{"uids": ["REQ-B"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-A, scope=function)", "markers": [{"uids": ["REQ-A"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-B, scope=function)", "markers": [{"uids": ["REQ-B"], "scope": "function", "role": null}]}
+{"input": "@relation(SDOC-SRS-136, scope=file)", "markers": [{"uids": ["SDOC-SRS-136"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-2,", "error": true}
+{"input": "@relation{INT_STP_016_0000, INT_STP_016_0001, INT_STP_016_0002,", "error": true}
+{"input": "@relation:\" is not treated as an incomplete StrictDoc marker.", "markers": []}
+{"input": "@relation: how that frequency relates to achieved frequency", "markers": []}
+{"input": "@relation(REQ-003, scope=range_start)", "markers": [{"uids": ["REQ-003"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-003, scope=range_end)", "markers": [{"uids": ["REQ-003"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-001, REQ-002, scope=range_start)", "markers": [{"uids": ["REQ-001", "REQ-002"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-001, REQ-002, scope=range_end)", "markers": [{"uids": ["REQ-001", "REQ-002"], "scope": "range_end", "role": null}]}
+{"input": "@relation(skip, scope=file)", "markers": [{"uids": ["skip"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-002, scope=line)", "markers": [{"uids": ["REQ-002"], "scope": "line", "role": null}]}
+{"input": "@relation(REQ-003, scope=line)", "markers": [{"uids": ["REQ-003"], "scope": "line", "role": null}]}
+{"input": "@relation keyword found in source file.\"", "markers": []}
+{"input": "@relation(REQ-001, scope=line)\"", "markers": [{"uids": ["REQ-001"], "scope": "line", "role": null}]}
+{"input": "@relation(SDOC-SRS-147, scope=file)", "markers": [{"uids": ["SDOC-SRS-147"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-001, REQ-002, REQ-003, scope=range_start)", "markers": [{"uids": ["REQ-001", "REQ-002", "REQ-003"], "scope": "range_start", "role": null}]}
+{"input": "@relation(REQ-001, REQ-002, REQ-003, scope=range_end)", "markers": [{"uids": ["REQ-001", "REQ-002", "REQ-003"], "scope": "range_end", "role": null}]}
+{"input": "@relation keywords are also unmatched on lines: [(2, 3)].\"", "markers": []}
+{"input": "@relation({node_1_}, {node_2_}, scope=function)\"", "error": true}
+{"input": "@relation(REQ-1, scope=function, role=Implementation)\"", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Implementation"}]}
+{"input": "@relation(skip, scope=file)\")", "markers": [{"uids": ["skip"], "scope": "file", "role": null}]}
+{"input": "@relation(REQ-1, scope=function)\\n\"", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1, scope=function)\\n\",", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ_1, scope=function)\\n\",", "markers": [{"uids": ["REQ_1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ.1, scope=function)\\n\",", "markers": [{"uids": ["REQ.1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ/1, scope=function)\\n\",", "markers": [{"uids": ["REQ/1"], "scope": "function", "role": null}]}
+{"input": "@relation{REQ-1, scope=function}", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1)\\n\", \"function\", LanguageItemMarker),", "markers": [{"uids": ["REQ-1"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-1, scope=line)\\n\", None, LineMarker),", "markers": [{"uids": ["REQ-1"], "scope": "line", "role": null}]}
+{"input": "@relation(REQ-1, scope=line)\\n\", \"function\", LineMarker),", "markers": [{"uids": ["REQ-1"], "scope": "line", "role": null}]}
+{"input": "@relation(REQ-1, role=implementation)\\n\"", "markers": [{"uids": ["REQ-1"], "scope": null, "role": "implementation"}]}
+{"input": "@relation(REQ-1)\\n\"", "markers": [{"uids": ["REQ-1"], "scope": null, "role": null}]}
+{"input": "@relation marker for requirements REQ-1 misses scope argument.\"", "markers": []}
+{"input": "@relation(REQ-1, scope=function)\"", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1)", "markers": [{"uids": ["REQ-1"], "scope": null, "role": null}]}
+{"input": "@relation(REQ-1, REQ-2, REQ-3, scope=function)", "markers": [{"uids": ["REQ-1", "REQ-2", "REQ-3"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1, scope=function, role=Implementation)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Implementation"}]}
+{"input": "@relation(REQ-1, scope=function, role=Implements)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Implements"}]}
+{"input": "@relation(REQ-1, scope=function, role=Verification)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Verification"}]}
+{"input": "@relation(REQ-1, scope=function, role=Verifies)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Verifies"}]}
+{"input": "@relation(REQ-1, role=Refines)", "markers": [{"uids": ["REQ-1"], "scope": null, "role": "Refines"}]}
+{"input": "@relation{REQ-1, scope=function, role=Test}", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": "Test"}]}
+{"input": "@relation( REQ-1, scope=function )", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ.1/a_b-2, scope=file)", "markers": [{"uids": ["REQ.1/a_b-2"], "scope": "file", "role": null}]}
+{"input": "// @relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "/// @relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "# @relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "## @relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": " * @relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "/** @relation(REQ-1, scope=function) */", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "some comment\n@relation(REQ-1, scope=function)", "markers": [{"uids": ["REQ-1"], "scope": "function", "role": null}]}
+{"input": "/**\n * @relation(REQ-1,\n *   REQ-2, scope=function)\n */", "markers": [{"uids": ["REQ-1", "REQ-2"], "scope": "function", "role": null}]}
+{"input": "@relation(REQ-1, scope=range_start) @relation(REQ-2, scope=range_end)", "markers": [{"uids": ["REQ-1"], "scope": "range_start", "role": null}, {"uids": ["REQ-2"], "scope": "range_end", "role": null}]}
+{"input": "@relation(REQ-1, scope=file)\n@relation(REQ-2, scope=line)", "markers": [{"uids": ["REQ-1"], "scope": "file", "role": null}, {"uids": ["REQ-2"], "scope": "line", "role": null}]}
+{"input": "see @relation(REQ-1, scope=function) for details", "markers": []}
+{"input": "// a marker like ``@relation(REQ-1, scope=function)``", "markers": []}
+{"input": "@relation, no braces", "markers": []}
+{"input": "@relations(REQ-1, scope=function)", "markers": []}
+{"input": "@relation (REQ-1, scope=function)", "markers": []}
+{"input": "@relation()", "error": true}
+{"input": "@relation(REQ-1,", "error": true}
+{"input": "@relation(scope=file)", "error": true}
+{"input": "@relation(R, scope=function)", "error": true}
+{"input": "@relation(1REQ, scope=function)", "error": true}
+{"input": "@relation({reqs}, scope=function)", "error": true}
+{"input": "@relation(REQ-1, scope=bogus)", "error": true}
+{"input": "@relation(REQ-1, REQ-1, scope=function)", "error": true}
+{"input": "@relation(REQ-1, role=Verifies, scope=function)", "error": true}
+{"input": "@relation(REQ-1, scope=file, REQ-2)", "error": true}
+{"input": "@relation(REQ-1, foo=bar)", "error": true}
+{"input": "@relation(REQ-1,scope=function)", "error": true}
+{"input": "@relation(REQ-1 , scope=function)", "error": true}
+{"input": "@relation(REQ-1, role=Has-Dash)", "error": true}
+{"input": "//! @relation(REQ-1, scope=function)", "markers": []}
+{"input": "-- @relation(REQ-1, scope=function)", "markers": []}
+{"input": "<!-- @relation(REQ-1, scope=function) -->", "markers": []}

@@ -6,21 +6,26 @@ runtime dependencies; designed for embedding in coverage tools, LSPs, and
 CI checks that need to read StrictDoc without shelling out to the upstream
 Python implementation.
 
-Tested against the upstream
+Tested differentially against upstream
 [`strictdoc-project/strictdoc`](https://github.com/strictdoc-project/strictdoc)
-test corpus: **1434 / 1436** files parse cleanly at tag `0.21.0`.
+`0.21.0` on its own test corpus: for every `.sdoc` file upstream accepts,
+the crate produces the same nodes, fields, relations and section structure,
+and every `@relation` marker in the corpus parses to the same UIDs, scope
+and role. The few intended differences (mostly upstream semantic checks the
+crate doesn't do) are listed in
+[`tests/fixtures/upstream-oracle/known-divergences.txt`](https://github.com/kraln/strictdoc-parser/blob/main/tests/fixtures/upstream-oracle/known-divergences.txt).
 
 ## Install
 
 ```toml
 [dependencies]
-strictdoc-parser = "0.1"
+strictdoc-parser = "0.2"
 ```
 
 ## Usage
 
 ```rust
-use strictdoc_parser::{parse, parse_relation_annotation, RelationScope};
+use strictdoc_parser::{parse, parse_relation_annotation, RelationRole, RelationScope};
 
 let src = "\
 [DOCUMENT]
@@ -40,29 +45,39 @@ for req in doc.requirements_flat() {
     println!("{}: {}", req.uid().unwrap_or(""), req.title().unwrap_or(""));
 }
 
-let ann = parse_relation_annotation("// @relation(EX-001, scope=function, role=Implements)")
+let ann = parse_relation_annotation("// @relation(EX-001, scope=function, role=Implementation)")
     .unwrap();
 assert_eq!(ann.uids, vec!["EX-001"]);
-assert_eq!(ann.scope, RelationScope::Function);
+assert_eq!(ann.scope, Some(RelationScope::Function));
+assert_eq!(ann.role.as_deref(), Some("Implementation"));
+assert_eq!(ann.role_kind(), Some(RelationRole::Implements));
 # Ok::<(), strictdoc_parser::ParseError>(())
 ```
 
 Every AST node carries a `Span` with byte-offset and 1-indexed line/column,
 so the output is suitable for hover-style IDE integrations.
 
-## Scope of v0.1
+## Scope
 
-**Supported:** `[DOCUMENT]` headers, `[GRAMMAR]` (`IMPORT_FROM_FILE:` is
-surfaced; inline grammars are treated as opaque), `[[SECTION]]` blocks with
-arbitrary nesting, `[REQUIREMENT]` blocks with single-line and heredoc
-(`>>>` … `<<<`) field values, `@relation(UID[, …][, scope=…][, role=…])`
-source annotations. Unknown blocks (e.g. `[TEXT]`,
-`[[COMPOSITE_REQUIREMENT]]`, user-grammar tags) are skipped tolerantly so
-the parser doesn't choke on documents that mix conventional and
-custom-grammar content.
+**Supported:**
 
-**Not supported (yet):** validation against an external `.sgra` grammar
-file, round-trip serialisation, ReqIF / HTML / PDF export. For those, use
+- `[DOCUMENT]` headers, including `OPTIONS:` and `METADATA:`.
+- `[GRAMMAR]`: `IMPORT_FROM_FILE:` is surfaced; inline grammars are
+  treated as opaque.
+- `[[SECTION]]` blocks with arbitrary nesting, and the legacy `[SECTION]`
+  form.
+- Nodes of any element type (`[REQUIREMENT]`, `[TEXT]`, custom-grammar
+  elements), composite `[[TAG]]` … `[[/TAG]]` nodes, single-line and heredoc
+  (`>>>` … `<<<`) fields, and `RELATIONS:` lists.
+- `[DOCUMENT_FROM_FILE]` includes (surfaced, not followed).
+- `@relation(…)` / `@relation{…}` source markers with every upstream scope
+  (`file`, `class`, `function`, `line`, `range_start`, `range_end`) and
+  free-form roles. `find_relation_annotations` reports malformed markers
+  as errors.
+
+**Not supported (yet):** validation against a grammar (inline or `.sgra`),
+following includes, round-trip serialisation, and ReqIF / HTML / PDF export.
+For those, use
 [upstream StrictDoc](https://github.com/strictdoc-project/strictdoc).
 
 ## Features
@@ -81,4 +96,4 @@ test suite, not a generated estimate.
 
 ## License
 
-[MPL-2.0](LICENSE).
+[MPL-2.0](https://github.com/kraln/strictdoc-parser/blob/main/LICENSE).
