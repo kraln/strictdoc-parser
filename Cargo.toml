@@ -1,6 +1,6 @@
 [package]
 name = "strictdoc-parser"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.75"
 license = "MPL-2.0"
@@ -9,7 +9,11 @@ description = "Parser for StrictDoc .sdoc files and StrictDoc @relation source a
 keywords = ["strictdoc", "requirements", "parser", "sdoc"]
 categories = ["parser-implementations"]
 readme = "README.md"
-exclude = ["tests/fixtures/upstream/**"]
+exclude = [
+    "tests/fixtures/upstream/**",
+    "tests/fixtures/upstream-oracle/**",
+    "tools/**",
+]
 
 [features]
 default = []
@@ -19,4 +23,4 @@ serde = ["dep:serde"]
 serde = { version = "1", features = ["derive"], optional = true }
 
 [dev-dependencies]
-insta = "1"
+serde_json = "1"

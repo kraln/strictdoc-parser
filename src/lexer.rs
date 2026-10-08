@@ -22,10 +22,17 @@ pub(crate) struct Line<'a> {
 /// Iterate over the lines of `input`, tracking byte offsets and 1-indexed
 /// line numbers. The yielded `text` excludes the trailing `\n` (and `\r` if
 /// present, treating `\r\n` as one line terminator).
+#[cfg(test)]
 pub(crate) fn lines(input: &str) -> Lines<'_> {
+    lines_from(input, 0)
+}
+
+/// Like [`lines`], but start at byte offset `start` (which must be on a
+/// char boundary and before the first line break), e.g. to skip a BOM.
+pub(crate) fn lines_from(input: &str, start: usize) -> Lines<'_> {
     Lines {
         input,
-        pos: 0,
+        pos: start,
         line_no: 1,
     }
 }
@@ -80,9 +87,12 @@ pub(crate) enum LineKind<'a> {
     DoubleBlockHeader { tag: &'a str },
     /// `[[/TAG]]` (double brackets, closer).
     BlockClose { tag: &'a str },
+    /// `[/TAG]` (single brackets, closer) — only used by the legacy
+    /// `[SECTION]` … `[/SECTION]` form.
+    LegacyClose { tag: &'a str },
     /// `KEY: >>>` — heredoc opener for the field `KEY`.
     HeredocOpen { name: &'a str },
-    /// `<<<` — heredoc closer.
+    /// `<<<` at the start of a line — heredoc closer.
     HeredocClose,
     /// `KEY: value` — single-line field with a non-empty value (and value
     /// is not exactly `>>>`).
@@ -104,29 +114,40 @@ pub(crate) enum LineKind<'a> {
 }
 
 /// Classify a single line.
+///
+/// Block markers and the heredoc closer are only recognised at column 1,
+/// as in upstream StrictDoc: an indented `<<<` or `[[SECTION]]` (e.g.
+/// inside a code example in a heredoc) is ordinary text.
 pub(crate) fn classify<'a>(line: &Line<'a>) -> LineKind<'a> {
     let trimmed = line.text.trim_end();
     let raw_trimmed = trimmed.trim_start();
     let indent = trimmed.len() - raw_trimmed.len();
 
-    // Heredoc close.
-    if raw_trimmed == "<<<" {
-        return LineKind::HeredocClose;
-    }
-
-    // Block headers and closers.
-    if let Some(rest) = raw_trimmed.strip_prefix("[[") {
-        if let Some(inner) = rest.strip_suffix("]]") {
-            if let Some(tag) = inner.strip_prefix('/') {
-                return LineKind::BlockClose { tag };
-            }
-            return LineKind::DoubleBlockHeader { tag: inner };
+    if indent == 0 {
+        // r[impl req.heredoc-close]
+        if trimmed == "<<<" {
+            return LineKind::HeredocClose;
         }
-        // `[[…` without matching close — fall through to Other and let the
-        // parser report a malformed header.
-    } else if let Some(rest) = raw_trimmed.strip_prefix('[') {
-        if let Some(inner) = rest.strip_suffix(']') {
-            return LineKind::BlockHeader { tag: inner };
+
+        if let Some(inner) = trimmed
+            .strip_prefix("[[")
+            .and_then(|r| r.strip_suffix("]]"))
+        {
+            if let Some(tag) = inner.strip_prefix('/') {
+                if is_tag(tag) {
+                    return LineKind::BlockClose { tag };
+                }
+            } else if is_tag(inner) {
+                return LineKind::DoubleBlockHeader { tag: inner };
+            }
+        } else if let Some(inner) = trimmed.strip_prefix('[').and_then(|r| r.strip_suffix(']')) {
+            if let Some(tag) = inner.strip_prefix('/') {
+                if is_tag(tag) {
+                    return LineKind::LegacyClose { tag };
+                }
+            } else if is_tag(inner) {
+                return LineKind::BlockHeader { tag: inner };
+            }
         }
     }
 
@@ -135,18 +156,8 @@ pub(crate) fn classify<'a>(line: &Line<'a>) -> LineKind<'a> {
         let name = &raw_trimmed[..colon_idx];
         if is_field_name(name) {
             let after = raw_trimmed[colon_idx + 1..].trim();
-            if after == ">>>" {
+            if after == ">>>" && indent == 0 {
                 return LineKind::HeredocOpen { name };
-            }
-            if after.is_empty() {
-                if indent > 0 {
-                    return LineKind::IndentedField {
-                        indent,
-                        name,
-                        value: "",
-                    };
-                }
-                return LineKind::EmptyField { name };
             }
             if indent > 0 {
                 return LineKind::IndentedField {
@@ -155,6 +166,9 @@ pub(crate) fn classify<'a>(line: &Line<'a>) -> LineKind<'a> {
                     value: after,
                 };
             }
+            if after.is_empty() {
+                return LineKind::EmptyField { name };
+            }
             return LineKind::Field { name, value: after };
         }
     }
@@ -162,17 +176,26 @@ pub(crate) fn classify<'a>(line: &Line<'a>) -> LineKind<'a> {
     LineKind::Other
 }
 
-/// True if `s` looks like a StrictDoc field name (`[A-Z][A-Z0-9_-]*`).
-///
-/// Real-world `.sdoc` files use hyphens in field names (e.g. `CHECKED-BY`)
-/// as well as underscores, so both are accepted.
+/// True if `s` looks like a StrictDoc element tag (`[A-Z][A-Z0-9_]*`).
+fn is_tag(s: &str) -> bool {
+    let mut chars = s.chars();
+    match chars.next() {
+        Some(c) if c.is_ascii_uppercase() => {}
+        _ => return false,
+    }
+    chars.all(|c| c.is_ascii_uppercase() || c.is_ascii_digit() || c == '_')
+}
+
+/// True if `s` looks like a StrictDoc field name. Upstream's rule is
+/// `[A-Z]+[A-Za-z0-9_\-]*`: an uppercase first letter, then letters,
+/// digits, `_` or `-` (e.g. `CHECKED-BY`, `Verified_by`).
 fn is_field_name(s: &str) -> bool {
     let mut chars = s.chars();
     match chars.next() {
         Some(c) if c.is_ascii_uppercase() => {}
         _ => return false,
     }
-    chars.all(|c| c.is_ascii_uppercase() || c.is_ascii_digit() || c == '_' || c == '-')
+    chars.all(|c| c.is_ascii_alphanumeric() || c == '_' || c == '-')
 }
 
 /// True if a line is blank (empty or whitespace-only).
@@ -283,9 +306,29 @@ mod tests {
     }
 
     #[test]
+    fn classify_markers_only_at_column_one() {
+        assert!(matches!(classify_str("    <<<"), LineKind::Other));
+        assert!(matches!(classify_str("<<<  "), LineKind::HeredocClose));
+        assert!(matches!(classify_str("  [[SECTION]]"), LineKind::Other));
+        assert!(matches!(
+            classify_str("[/SECTION]"),
+            LineKind::LegacyClose { tag: "SECTION" }
+        ));
+        assert!(matches!(classify_str("[LINK: X]"), LineKind::Other));
+        assert!(matches!(
+            classify_str("Verified_by: x"),
+            LineKind::Field {
+                name: "Verified_by",
+                value: "x"
+            }
+        ));
+    }
+
+    #[test]
     fn classify_rejects_non_uppercase_field_names() {
         // Lowercase names are not StrictDoc fields.
         assert!(matches!(classify_str("lowercase: value"), LineKind::Other));
+        assert!(matches!(classify_str("Two words: value"), LineKind::Other));
         // Sentence with a colon inside isn't a field either.
         assert!(matches!(classify_str("This is a note."), LineKind::Other));
     }

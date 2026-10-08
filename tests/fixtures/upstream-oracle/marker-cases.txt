@@ -1,0 +1,58 @@
+; Hand-written @relation cases, one per line, fed to upstream's comment
+; preprocessor + MarkerLexer by tools/upstream-oracle/dump.py and to
+; find_relation_annotations by tests/upstream_differential.rs.
+; `\n` stands for a line break. Lines starting with `;` are comments.
+@relation(REQ-1)
+@relation(REQ-1, scope=file)
+@relation(REQ-1, scope=class)
+@relation(REQ-1, scope=function)
+@relation(REQ-1, scope=line)
+@relation(REQ-1, scope=range_start)
+@relation(REQ-1, scope=range_end)
+@relation(REQ-1, REQ-2, REQ-3, scope=function)
+@relation(REQ-1, scope=function, role=Implementation)
+@relation(REQ-1, scope=function, role=Implements)
+@relation(REQ-1, scope=function, role=Verification)
+@relation(REQ-1, scope=function, role=Verifies)
+@relation(REQ-1, scope=function, role=Test)
+@relation(REQ-1, role=Refines)
+@relation{REQ-1, scope=function}
+@relation{REQ-1, scope=function, role=Test}
+@relation( REQ-1, scope=function )
+@relation(REQ.1/a_b-2, scope=file)
+// @relation(REQ-1, scope=function)
+/// @relation(REQ-1, scope=function)
+# @relation(REQ-1, scope=function)
+## @relation(REQ-1, scope=function)
+ * @relation(REQ-1, scope=function)
+/** @relation(REQ-1, scope=function) */
+some comment\n@relation(REQ-1, scope=function)
+/**\n * @relation(REQ-1,\n *   REQ-2, scope=function)\n */
+@relation(REQ-1, scope=range_start) @relation(REQ-2, scope=range_end)
+@relation(REQ-1, scope=file)\n@relation(REQ-2, scope=line)
+see @relation(REQ-1, scope=function) for details
+// a marker like ``@relation(REQ-1, scope=function)``
+@relation, no braces
+@relations(REQ-1, scope=function)
+@relation (REQ-1, scope=function)
+; Malformed markers: upstream rejects all of these.
+@relation(
+@relation()
+@relation(REQ-1,
+@relation(scope=file)
+@relation(R, scope=function)
+@relation(1REQ, scope=function)
+@relation({reqs}, scope=function)
+@relation(REQ-1, scope=bogus)
+@relation(REQ-1, REQ-1, scope=function)
+@relation(REQ-1, role=Verifies, scope=function)
+@relation(REQ-1, scope=file, REQ-2)
+@relation(REQ-1, foo=bar)
+@relation(REQ-1,scope=function)
+@relation(REQ-1 , scope=function)
+@relation(REQ-1, role=Has-Dash)
+; Leaders upstream's generic preprocessor doesn't strip (language readers
+; handle them); the crate accepts them. Listed in known-divergences.txt.
+//! @relation(REQ-1, scope=function)
+-- @relation(REQ-1, scope=function)
+<!-- @relation(REQ-1, scope=function) -->

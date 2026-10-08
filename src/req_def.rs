@@ -2,27 +2,32 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-//! Flat-iterator view over a [`Document`]'s requirements.
+//! Flat-iterator views over a [`Document`]'s nodes.
 //!
-//! This adapter walks a parsed [`Document`] and surfaces each
-//! `[REQUIREMENT]` block as a [`RequirementView`] that holds enough
-//! information for downstream coverage tools (notably tracey) to map a
-//! StrictDoc requirement onto their own internal types.
+//! This adapter walks a parsed [`Document`] and surfaces each node as a
+//! [`RequirementView`] that holds enough information for downstream
+//! coverage tools (notably tracey) to map a StrictDoc node onto their own
+//! internal types.
 //!
 //! The adapter is intentionally format-agnostic on the API surface — it
 //! takes no marq/tracey dependency. Callers do their own type translation.
 
-use crate::ast::{Document, DocumentChild, Field, Requirement, Section};
+use crate::ast::{Document, DocumentChild, Field, Node, Relation};
 
-/// A borrowed view over a single requirement.
+/// A borrowed view over a single node.
 pub struct RequirementView<'a> {
-    pub requirement: &'a Requirement,
-    /// Section titles from outermost to innermost containing this
-    /// requirement.
+    pub requirement: &'a Node,
+    /// Section titles from outermost to innermost containing this node.
+    /// Composite nodes are not sections and do not appear here.
     pub section_path: Vec<&'a str>,
 }
 
 impl<'a> RequirementView<'a> {
+    /// The element tag, e.g. `"REQUIREMENT"`.
+    pub fn node_type(&self) -> &'a str {
+        &self.requirement.node_type
+    }
+
     /// Convenience: the UID field, if present.
     pub fn uid(&self) -> Option<&'a str> {
         self.requirement.field_text("UID")
@@ -38,16 +43,31 @@ impl<'a> RequirementView<'a> {
         self.requirement.field_text("STATEMENT")
     }
 
-    /// Convenience: every field, by name.
+    /// Convenience: every field, in source order.
     pub fn fields(&self) -> &'a [Field] {
         &self.requirement.fields
+    }
+
+    /// Convenience: the node's `RELATIONS:` entries.
+    pub fn relations(&self) -> &'a [Relation] {
+        &self.requirement.relations
     }
 }
 
 impl Document {
     /// Walk this document in source order, producing one view per
-    /// `[REQUIREMENT]`.
+    /// normative node: every node except `[TEXT]`, including custom-grammar
+    /// elements and composite nodes, and descending into composite nodes.
+    // r[impl node.flat]
     pub fn requirements_flat(&self) -> Vec<RequirementView<'_>> {
+        let mut out = self.nodes_flat();
+        out.retain(|v| v.requirement.is_normative());
+        out
+    }
+
+    /// Walk this document in source order, producing one view per node,
+    /// `[TEXT]` nodes included. A composite node precedes its children.
+    pub fn nodes_flat(&self) -> Vec<RequirementView<'_>> {
         let mut out = Vec::new();
         let mut path: Vec<&str> = Vec::new();
         walk(&self.body, &mut path, &mut out);
@@ -62,25 +82,21 @@ fn walk<'a>(
 ) {
     for child in children {
         match child {
-            DocumentChild::Section(s) => visit_section(s, section_path, out),
-            DocumentChild::Requirement(r) => {
+            DocumentChild::Section(s) => {
+                section_path.push(s.title.as_str());
+                walk(&s.children, section_path, out);
+                section_path.pop();
+            }
+            DocumentChild::Node(n) => {
                 out.push(RequirementView {
-                    requirement: r,
+                    requirement: n,
                     section_path: section_path.clone(),
                 });
+                walk(&n.children, section_path, out);
             }
+            DocumentChild::DocumentFromFile(_) => {}
         }
     }
-}
-
-fn visit_section<'a>(
-    section: &'a Section,
-    section_path: &mut Vec<&'a str>,
-    out: &mut Vec<RequirementView<'a>>,
-) {
-    section_path.push(section.title.as_str());
-    walk(&section.children, section_path, out);
-    section_path.pop();
 }
 
 #[cfg(test)]

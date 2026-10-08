@@ -12,6 +12,7 @@ use strictdoc_parser::{parse_relation_annotation, RelationRole, RelationScope};
 fn ignores_unrelated_comment_text() {
     assert!(parse_relation_annotation("// TODO: revisit this later").is_none());
     assert!(parse_relation_annotation("// see @relation in docs/spec.md").is_none());
+    assert!(parse_relation_annotation("// see @relation(REQ-1) in docs/spec.md").is_none());
 }
 
 #[test]
@@ -26,13 +27,14 @@ fn parses_annotation_with_uppercase_uids() {
     // StrictDoc-style UIDs are uppercase; we preserve them verbatim.
     let ann = parse_relation_annotation("// @relation(BR-001, BR-002, scope=function)").unwrap();
     assert_eq!(ann.uids, vec!["BR-001", "BR-002"]);
-    assert_eq!(ann.scope, RelationScope::Function);
+    assert_eq!(ann.scope, Some(RelationScope::Function));
 }
 
 #[test]
 fn parses_annotation_with_role_attached() {
     let ann =
         parse_relation_annotation("/// @relation(REQ-100, scope=file, role=Verifies)").unwrap();
-    assert_eq!(ann.scope, RelationScope::File);
-    assert_eq!(ann.role, Some(RelationRole::Verifies));
+    assert_eq!(ann.scope, Some(RelationScope::File));
+    assert_eq!(ann.role.as_deref(), Some("Verifies"));
+    assert_eq!(ann.role_kind(), Some(RelationRole::Verifies));
 }

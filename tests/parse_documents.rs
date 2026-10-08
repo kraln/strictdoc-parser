@@ -73,7 +73,7 @@ fn spans_track_utf8_byte_offsets() {
 fn preserves_field_order() {
     let doc = parse(MULTILINE).expect("must parse");
     let req = match &doc.body[0] {
-        strictdoc_parser::DocumentChild::Requirement(r) => r,
+        strictdoc_parser::DocumentChild::Node(r) => r,
         _ => panic!("expected requirement"),
     };
     let names: Vec<&str> = req.fields.iter().map(|f| f.name.as_str()).collect();
